@@ -38,17 +38,7 @@ import UIKit
     func setup() {
         // Add tap action
         self.addTarget(self, action: #selector(shouldPresent), for: .touchUpInside)
-
-        // Draw circle around the button
-        let w = self.frame.size.width/2
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x:w, y:w), radius: w+2, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
-        circleLayer.path = circlePath.cgPath
-        circleLayer.fillColor = UIColor.clear.cgColor
-        circleLayer.strokeColor = UIColor.label.cgColor
-        circleLayer.lineWidth = 1
-        layer.addSublayer(circleLayer)
     }
-    
 
     
     @objc func shouldPresent(sender: WSPalettePickerButton){
@@ -68,6 +58,16 @@ import UIKit
     public override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = self.frame.size.height/2
+        
+        // Draw circle around the button
+        let w = self.frame.size.width/2
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x:w, y:w), radius: w+2, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+        circleLayer.path = circlePath.cgPath
+        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.strokeColor = UIColor.label.cgColor
+        circleLayer.lineWidth = 1
+        layer.addSublayer(circleLayer)
+
     }
     
     override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
