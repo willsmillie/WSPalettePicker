@@ -37,7 +37,7 @@ class WSPalettePickerSwachCell: UICollectionViewCell {
     
     override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if #available(iOS 13, *), self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+        if self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             circleLayer.strokeColor = UIColor.label.cgColor
         }
     }
