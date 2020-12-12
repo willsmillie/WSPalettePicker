@@ -13,7 +13,7 @@
 		C7B31F792585299F00D3D9A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7B31F772585299F00D3D9A5 /* Main.storyboard */; };
 		C7B31F7B258529A200D3D9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7B31F7A258529A200D3D9A5 /* Assets.xcassets */; };
 		C7B31F7E258529A200D3D9A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7B31F7C258529A200D3D9A5 /* LaunchScreen.storyboard */; };
-		C7B31F8A25852AF400D3D9A5 /* WSPalettePicker in Frameworks */ = {isa = PBXBuildFile; productRef = C7B31F8925852AF400D3D9A5 /* WSPalettePicker */; };
+		C7B31F8E2585305C00D3D9A5 /* WSPalettePicker in Frameworks */ = {isa = PBXBuildFile; productRef = C7B31F8D2585305C00D3D9A5 /* WSPalettePicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7B31F8A25852AF400D3D9A5 /* WSPalettePicker in Frameworks */,
+				C7B31F8E2585305C00D3D9A5 /* WSPalettePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 			);
 			name = "iOS Example";
 			packageProductDependencies = (
-				C7B31F8925852AF400D3D9A5 /* WSPalettePicker */,
+				C7B31F8D2585305C00D3D9A5 /* WSPalettePicker */,
 			);
 			productName = "iOS Example";
 			productReference = C7B31F6E2585299F00D3D9A5 /* iOS Example.app */;
@@ -356,7 +356,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C7B31F8925852AF400D3D9A5 /* WSPalettePicker */ = {
+		C7B31F8D2585305C00D3D9A5 /* WSPalettePicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WSPalettePicker;
 		};

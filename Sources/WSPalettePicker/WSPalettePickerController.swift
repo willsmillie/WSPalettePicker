@@ -8,13 +8,10 @@
 
 import UIKit
 
-
-@available(iOS 13, *)
 public protocol WSPalettePickerDataSource {
     func palettePickerColors(pickerController: WSPalettePickerController) -> [UIColor]
 }
 
-@available(iOS 13, *)
 public protocol WSPalettePickerDelegate {
     func palettePickerShouldPresent(pickerController: WSPalettePickerController)
     func pickerDidSelect(color: UIColor)
@@ -26,7 +23,17 @@ public class WSPalettePickerController: UIViewController, UIPopoverPresentationC
     public var dataSource: WSPalettePickerDataSource?
     public var delegate: WSPalettePickerDelegate?
 
-    var sender: WSPalettePickerButton?
+    var sender: WSPalettePickerButton? {
+        didSet {
+            modalPresentationStyle = .popover;
+            preferredContentSize = CGSize.init(width: 300, height: 64)
+
+            popoverPresentationController!.delegate = self
+            popoverPresentationController!.sourceView = sender
+            popoverPresentationController!.sourceRect = sender!.bounds
+            popoverPresentationController!.permittedArrowDirections = .any;
+        }
+    }
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: WSPalettePickerLayoutFlow.init())
     
     var colors: [UIColor] {
@@ -60,7 +67,6 @@ public class WSPalettePickerController: UIViewController, UIPopoverPresentationC
 }
 
 // MARK: Collection View
-@available(iOS 13, *)
 extension WSPalettePickerController : UICollectionViewDelegate, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colors.count

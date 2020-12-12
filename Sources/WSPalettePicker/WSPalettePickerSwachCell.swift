@@ -8,7 +8,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class WSPalettePickerSwachCell: UICollectionViewCell {
     
     let circleLayer = CAShapeLayer()
@@ -17,7 +16,6 @@ class WSPalettePickerSwachCell: UICollectionViewCell {
             self.backgroundColor = color
         }
     }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -26,7 +24,11 @@ class WSPalettePickerSwachCell: UICollectionViewCell {
 
         circleLayer.path = circlePath.cgPath
         circleLayer.fillColor = UIColor.clear.cgColor
-        circleLayer.strokeColor = UIColor.label.cgColor
+        if #available(tvOS 13.0, *) {
+            circleLayer.strokeColor = UIColor.label.cgColor
+        } else {
+            // Fallback on earlier versions
+        }
         circleLayer.lineWidth = 1
         circleLayer.isHidden = true
         
@@ -34,11 +36,12 @@ class WSPalettePickerSwachCell: UICollectionViewCell {
         layer.cornerRadius = self.frame.size.height/2
     }
     
-    
-    override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
-            circleLayer.strokeColor = UIColor.label.cgColor
+        if #available(tvOS 13.0, *) {
+            if self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+                circleLayer.strokeColor = UIColor.label.cgColor
+            }
         }
     }
     

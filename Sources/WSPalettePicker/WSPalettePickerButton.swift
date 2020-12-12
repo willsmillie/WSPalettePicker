@@ -8,7 +8,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 13, *)
 @IBDesignable public class WSPalettePickerButton: UIButton {
         
     public var controller = WSPalettePickerController()
@@ -31,8 +31,8 @@ import UIKit
     }
     
     public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
         setup()
+        super.prepareForInterfaceBuilder()
     }
     
     func setup() {
@@ -44,14 +44,6 @@ import UIKit
     @objc func shouldPresent(sender: WSPalettePickerButton){
         // Define the popover presentation style
         controller.sender = sender
-        controller.modalPresentationStyle = .popover;
-        controller.preferredContentSize = CGSize.init(width: 300, height: 64)
-
-        controller.popoverPresentationController!.delegate = controller
-        controller.popoverPresentationController!.sourceView = self
-        controller.popoverPresentationController!.sourceRect = self.bounds
-        controller.popoverPresentationController!.permittedArrowDirections = .down;
-
         controller.delegate?.palettePickerShouldPresent(pickerController: controller)
     }
     
