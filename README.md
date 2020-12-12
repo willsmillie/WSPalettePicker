@@ -1,7 +1,8 @@
 # WSPalettePicker
-An elegant color picker that allows a predefined set of colors to be selected
+An elegant color picker that allows a predefined set of colors to be selected.
 
 <img src="imgs/demo.gif" height="400"/>
+Please ignore the awful compresssion in the .gif. It looks nice, I swear
 
 # Installation
 You can use this component by adding it via Swift Package Manager, or downloading it and manually adding it to your project.
