@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WSPalettePickerSwachCell: UICollectionViewCell {
+class WSPalettePickerSwatchCell: UICollectionViewCell {
     
     let circleLayer = CAShapeLayer()
     var color = UIColor.systemBlue {
