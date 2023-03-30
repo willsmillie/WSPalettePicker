@@ -45,7 +45,7 @@ public class WSPalettePickerController: UIViewController, UIPopoverPresentationC
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.register(WSPalettePickerSwachCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(WSPalettePickerSwatchCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
@@ -73,7 +73,7 @@ extension WSPalettePickerController : UICollectionViewDelegate, UICollectionView
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WSPalettePickerSwachCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WSPalettePickerSwatchCell
         cell.color = colors[indexPath.row]
         cell.isSelected = cell.color == sender?.currentColor
         if cell.isSelected {
